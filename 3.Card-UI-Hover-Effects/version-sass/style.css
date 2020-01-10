@@ -1,0 +1,121 @@
+@charset "UTF-8";
+:root {
+  --color-primary: #32a3b1;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  min-height: 100vh;
+  background: #ebf5fc;
+}
+
+.container {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  width: 1100px;
+}
+
+.container .card {
+  width: 320px;
+  margin: 20px;
+  padding: 40px 30px;
+  background: #ebf5fc;
+  -webkit-box-shadow: -6px -6px 20px white, 6px 6px 20px rgba(0, 0, 0, 0.1);
+          box-shadow: -6px -6px 20px white, 6px 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+.container .card:hover {
+  -webkit-box-shadow: inset -6px -6px 10px rgba(255, 255, 255, 0.5), inset 6px 6px 10px rgba(0, 0, 0, 0.05);
+          box-shadow: inset -6px -6px 10px rgba(255, 255, 255, 0.5), inset 6px 6px 10px rgba(0, 0, 0, 0.05);
+}
+
+.container .card .imgBx {
+  position: relative;
+  text-align: center;
+}
+
+.container .card .imgBx img {
+  max-width: 120px;
+}
+
+.container .card .contentBx {
+  position: relative;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.container .card .contentBx h2 {
+  color: var(--color-primary);
+  -webkit-transition: color 5s;
+  transition: color 5s;
+  font-weight: 700;
+  /* em相对于父元素，rem相对于根元素。 */
+  font-size: 1.4em;
+}
+
+.container .card .contentBx p {
+  color: var(--color-primary);
+  -webkit-transition: color 5s;
+  transition: color 5s;
+}
+
+.container .card .contentBx a {
+  display: inline-block;
+  padding: 10px 20px;
+  margin-top: 15px;
+  border-radius: 40px;
+  color: var(--color-primary);
+  -webkit-transition: color 5s;
+  transition: color 5s;
+  font-size: 16px;
+  text-decoration: none;
+  -webkit-box-shadow: -4px -4px 15px white, 4px 4px 15px rgba(0, 0, 0, 0.1);
+          box-shadow: -4px -4px 15px white, 4px 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.container .card .contentBx a:hover {
+  /* 从外层的阴影（开始时）改变阴影内侧阴影 */
+  /* https://www.runoob.com/cssref/css3-pr-box-shadow.html */
+  -webkit-box-shadow: inset -4px -4px 10px rgba(255, 255, 255, 0.5), inset 4px 4px 10px rgba(0, 0, 0, 0.1);
+          box-shadow: inset -4px -4px 10px rgba(255, 255, 255, 0.5), inset 4px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* 最好使用无属性的span转换成块元素或者行内块元素进行设置，这样保证外面元素不变的情况下实现自身的缩放。 */
+/* http://www.mamicode.com/info-detail-2187184.html */
+.container .card .contentBx a:hover span {
+  display: inline-block;
+  -webkit-transform: scale(0.98);
+          transform: scale(0.98);
+}
+
+.container .card:hover .imgBx,
+.container .card:hover .contentBx {
+  -webkit-transform: scale(0.98);
+          transform: scale(0.98);
+}
+/*# sourceMappingURL=style.css.map */

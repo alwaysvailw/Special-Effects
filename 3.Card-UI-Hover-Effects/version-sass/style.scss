@@ -1,0 +1,107 @@
+$body-background: #ebf5fc;
+$background: #ebf5fc;
+// js如何操作或是更改sass里的变量
+// https://www.cnblogs.com/lmxxlm-123/p/10910544.html
+$color: var(--color-primary);
+
+:root {
+  --color-primary: #32a3b1;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: $body-background;
+}
+
+.container {
+  position: relative;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 1100px;
+}
+
+.container .card {
+  width: 320px;
+  margin: 20px;
+  padding: 40px 30px;
+  background: $background;
+  box-shadow: -6px -6px 20px rgba(255, 255, 255, 1),
+              6px 6px 20px rgba(0, 0, 0, .1);
+}
+
+.container .card:hover {
+  box-shadow: inset -6px -6px 10px rgba(255, 255, 255, .5),
+              inset 6px 6px 10px rgba(0, 0, 0, .05);
+}
+
+.container .card .imgBx {
+  position: relative;
+  text-align: center;
+}
+
+.container .card .imgBx img {
+  max-width: 120px;
+}
+
+.container .card .contentBx {
+  position: relative;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.container .card .contentBx h2 {
+  color: $color;
+  transition: color 5s;
+  font-weight: 700;
+  /* em相对于父元素，rem相对于根元素。 */
+  font-size: 1.4em;
+}
+
+.container .card .contentBx p {
+  color: $color;
+  transition: color 5s;
+}
+
+.container .card .contentBx a {
+  display: inline-block;
+  padding: 10px 20px;
+  margin-top: 15px;
+  border-radius: 40px;
+  color: $color;
+  transition: color 5s;
+  font-size: 16px;
+  text-decoration: none;
+  box-shadow: -4px -4px 15px rgba(255, 255, 255, 1),
+              4px 4px 15px rgba(0, 0, 0, .1);
+}
+
+.container .card .contentBx a:hover {
+  /* 从外层的阴影（开始时）改变阴影内侧阴影 */
+  /* https://www.runoob.com/cssref/css3-pr-box-shadow.html */
+  box-shadow: inset -4px -4px 10px rgba(255, 255, 255, 0.5),
+              inset 4px 4px 10px rgba(0, 0, 0, .1);
+}
+
+/* 最好使用无属性的span转换成块元素或者行内块元素进行设置，这样保证外面元素不变的情况下实现自身的缩放。 */
+/* http://www.mamicode.com/info-detail-2187184.html */
+.container .card .contentBx a:hover span {
+  display: inline-block;
+  transform: scale(0.98);
+}
+
+.container .card:hover .imgBx,
+.container .card:hover .contentBx {
+  transform: scale(0.98);
+}

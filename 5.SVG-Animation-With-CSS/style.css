@@ -1,0 +1,63 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  text-align: center;
+}
+
+/* transform-origin 属性允许您改变被转换元素的位置。 */
+/* https://www.w3school.com.cn/cssref/pr_transform-origin.asp */
+/* transform-box属性定义了与 transform、transform-origin 这两个属性有关联的布局框。 */
+/* https://developer.mozilla.org/zh-CN/docs/Web/CSS/transform-box */
+#left-wheel,
+#right-wheel {
+  animation: roll 2s linear infinite;
+  transform-origin: center;
+  transform-box: fill-box;
+}
+
+/* animation-direction 属性定义是否应该轮流反向播放动画。animation-direction: normal|alternate; */
+/* https://www.w3school.com.cn/cssref/pr_animation-direction.asp */
+#man-on-the-bike {
+  animation: bike 1s ease-in-out infinite alternate;
+  transform-origin: bottom;
+}
+
+#hat {
+  animation: hat 1s ease-in-out infinite alternate;
+  transform-origin: center;
+  transform-box: fill-box;
+}
+
+@keyframes roll {
+  from {
+    transform: rotateZ(0deg);
+  }
+
+  to {
+    transform: rotateZ(360deg);
+  }
+}
+
+@keyframes bike {
+  from {
+    transform: rotateX(0deg);
+  }
+
+  to {
+    transform: rotateX(20deg);
+  }
+}
+
+@keyframes hat {
+  from {
+    transform: translateY(0) rotateZ(0);
+  }
+
+  to {
+    transform: translateY(40%) rotateZ(20deg);
+  }
+}
